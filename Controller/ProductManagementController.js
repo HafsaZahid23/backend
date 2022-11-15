@@ -2,23 +2,29 @@ const ProductModel= require ('../Models/ProductManagementModel')
 
 const ProductData = async(req, res) => {
     try {
-       const {ProductName,ProductPrice} = req.body;
+    //    const {ProductName,ProductPrice} = req.body;
 
-       const DocToCreate = new ProductModel({
-        ProductName,
-        ProductPrice,
-        ImageUrl: `/assets/Product/${req.file.filename}`,
-        ImageName: req.file.originalname,
-        ImageMimeType: req.file.mimetype,
-       })
+    //    const DocToCreate = new ProductModel({
+    //     ProductName,
+    //     ProductPrice,
+    //     ImageUrl: `/assets/Product/${req.file.filename}`,
+    //     ImageName: req.file.originalname,
+    //     ImageMimeType: req.file.mimetype,
+    //    })
 
        
-       const DocToSave = await DocToCreate.save();
-       //Hey Please Save this Data to My DataBase //IOBlocking await
-       res.json({
-           Message: 'You Have Reached the Api End Point',
-           Body: DocToSave
-       })
+    //    const DocToSave = await DocToCreate.save();
+    //    //Hey Please Save this Data to My DataBase //IOBlocking await
+    //    res.json({
+    //        Message: 'You Have Reached the Api End Point',
+    //        Body: DocToSave
+    //    })
+
+    res.json ({
+        Message:'You have Reached The Endpoint',
+        Body:req.body,
+        Data:true
+    })
    } catch (error) {
        res.json({
            Message: error.mesage,
