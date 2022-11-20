@@ -17,7 +17,11 @@ const {
     UploadProductImage
   } =  require('../middlewares/UploadMedia');
 
+
 Router.post('/ProductData',UploadProductImage.array('images',20),ProductData);
+
+Router.post('/ProductData',UploadProductImage.array('ProductImage',10),ProductData);
+
 Router.get('/GetProductData',GetProductData);
 Router.post('/UpdateMyProductData',UpdateMyProductData);
 Router.delete('/DeleteProductData',DeleteProductData);
